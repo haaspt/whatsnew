@@ -30,14 +30,17 @@ def default_display():
             click.secho('%s' % story['section'], fg='red')
             click.secho('Story abstract: %s' % story['abstract'], fg='cyan')
             click.echo()
-     
-    click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
-    selection = raw_input()
-    if selection.isdigit():
-        selection = int(selection)
-        story = story_index[selection-1]
-        click.launch(story['url'])
+    
+    if index_num > 0:
+        click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
+        selection = raw_input()
+        if selection.isdigit():
+            selection = int(selection)
+            story = story_index[selection-1]
+            click.launch(story['url'])
+        else:
+            pass
     else:
-        pass
+        click.secho("No recent headlines to display", fg='blue', bold=True, nl=False)
 
 default_display()
