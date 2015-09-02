@@ -9,22 +9,27 @@ For additional news APIs see: http://www.programmableweb.com/news/81-news-apis-d
 
 click.clear()
 
-raw_news = requests.get('http://api.nytimes.com/svc/news/v3/content/all/all/.json?limit=10&api-key=cb6b696a018707793e9436bda629bde3%3A4%3A66817738')
+raw_news = requests.get('http://api.nytimes.com/svc/news/v3/content/all/all/.json?limit=20&api-key=cb6b696a018707793e9436bda629bde3%3A4%3A66817738')
 
 news = raw_news.json()
+
+nyt_filter = ['Business', 'Business Day', 'Front Page', 'International Home', 'N.Y. / Region', 'N.Y./Region',
+              'NYRegion', 'NYT Now', 'National', 'New York', 'New York and Region', 'Science', 'Technology',
+              "Today's Headlines", 'U.S.', 'Washington', 'World']
 
 def default_display():
     index_num = 0
     story_index = []
     for story in news['results']:
-        story_index.append(story)
-        index_num += 1
-        click.secho('%r - ' % index_num, bold=True, nl=False)
-        click.secho('%s ' % story['title'], fg='blue', bold=True, nl=False)
-        click.secho('-- %s -- ' % story['source'], fg='magenta', bold=True, nl=False)
-        click.secho('%s' % story['section'], fg='red')
-        click.secho('Story abstract: %s' % story['abstract'], fg='cyan')
-        print ""
+        if story['section'] in nyt_filter:
+            story_index.append(story)
+            index_num += 1
+            click.secho('%r - ' % index_num, bold=True, nl=False)
+            click.secho('%s ' % story['title'], fg='blue', bold=True, nl=False)
+            click.secho('-- %s -- ' % story['source'], fg='magenta', bold=True, nl=False)
+            click.secho('%s' % story['section'], fg='red')
+            click.secho('Story abstract: %s' % story['abstract'], fg='cyan')
+            click.echo()
      
     click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
     selection = raw_input()
