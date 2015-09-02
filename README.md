@@ -8,7 +8,7 @@ To do: Write installation guide
 
 ## Usage
 
-> $python main.py
+> $ python main.py
 
 ## History
 
