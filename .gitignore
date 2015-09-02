@@ -36,8 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
-# Emacs generated files#
-########################
+# Emacs generated files #
+#########################
 *~
 \#*\#
 /.emacs.desktop
@@ -46,3 +46,7 @@ Thumbs.db
 auto-save-list
 tramp
 .\#*
+
+# Virtual environment #
+#######################
+/venv
