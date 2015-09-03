@@ -51,7 +51,7 @@ tramp
 
 # PyCharm generated files #
 ###########################
-.idea*
+/.idea/*
 
 # Virtual environment #
 #######################
