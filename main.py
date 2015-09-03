@@ -2,6 +2,7 @@ import click
 import newsoutlets
 from config import GlobalConfig
 
+
 """
 For NYT API documentation see: http://developer.nytimes.com/io-docs and http://developer.nytimes.com/docs/times_newswire_api/
 For requests documentation see: http://www.python-requests.org/en/latest/
@@ -13,6 +14,7 @@ click.clear()
 option = GlobalConfig()
 
 news = newsoutlets.nyt_feed()
+
 
 def default_display():
     index_num = 0
@@ -43,6 +45,7 @@ def default_display():
 
             elif selection == '':
                 return exit == True
+
             else:
                 click.secho("Invalid entry", fg='red')
                 if option.prompt_until_exit == True:
