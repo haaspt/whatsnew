@@ -11,6 +11,12 @@ To do: Write installation guide
 ```bash
 $ python main.py
 ```
+## To do List
+
+- [ ] Add more news outlets
+- [ ] Add command line argument support
+- [ ] Add setup.py
+- [ ] Add newsoutlets.py, filters.py, and config.py
 
 ## History
 
