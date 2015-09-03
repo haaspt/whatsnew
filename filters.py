@@ -1,5 +1,4 @@
-nyt_filter = ['Business', 'Business Day', 'Front Page', 'International Home', 'N.Y. / Region', 'N.Y./Region',
-              'NYRegion', 'NYT Now', 'National', 'New York', 'New York and Region', 'Science', 'Technology',
+nyt_filter = ['Front Page', 'International Home', 'NYT Now', 'National', 'Science', 'Technology',
               "Today's Headlines", 'U.S.', 'Washington', 'World']
 
 """List of possible values for section filter:
