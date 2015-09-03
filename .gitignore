@@ -49,6 +49,10 @@ auto-save-list
 tramp
 .\#*
 
+# PyCharm generated files #
+###########################
+.idea*
+
 # Virtual environment #
 #######################
 /venv
