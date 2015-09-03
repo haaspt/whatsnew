@@ -1,5 +1,6 @@
 import requests
 import click
+import newsoutlets
 from filters import nyt_filter
 
 """
@@ -10,9 +11,7 @@ For additional news APIs see: http://www.programmableweb.com/news/81-news-apis-d
 
 click.clear()
 
-raw_news = requests.get('http://api.nytimes.com/svc/news/v3/content/all/all/.json?limit=20&api-key=cb6b696a018707793e9436bda629bde3%3A4%3A66817738')
-
-news = raw_news.json()
+news = newsoutlets.nyt_feed()
 
 def default_display():
     index_num = 0
