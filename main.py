@@ -1,7 +1,5 @@
-import requests
 import click
 import newsoutlets
-from filters import nyt_filter
 
 """
 For NYT API documentation see: http://developer.nytimes.com/io-docs and http://developer.nytimes.com/docs/times_newswire_api/
