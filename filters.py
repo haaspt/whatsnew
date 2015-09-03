@@ -13,5 +13,5 @@ New York and Region, Obituaries, Olympics, Open, Opinion, Paid Death Notices,
 Public Editor, Real Estate, Science, Sports, Style, Sunday Magazine, Sunday Review, 
 T Magazine, T:Style, Technology, The Public Editor, The Upshot, Theater, Times Topics, 
 TimesMachine, Today's Headlines, Topics, Travel, U.S., Universal, UrbanEye, Washington, 
-Week in Review. World, Your Money
+Week in Review, World, Your Money
 """

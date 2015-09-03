@@ -17,15 +17,14 @@ def default_display():
     index_num = 0
     story_index = []
     for story in news['results']:
-        if story['section'] in nyt_filter:
-            story_index.append(story)
-            index_num += 1
-            click.secho('%r - ' % index_num, bold=True, nl=False)
-            click.secho('%s ' % story['title'], fg='blue', bold=True, nl=False)
-            click.secho('-- %s -- ' % story['source'], fg='magenta', bold=True, nl=False)
-            click.secho('%s' % story['section'], fg='red')
-            click.secho('Story abstract: %s' % story['abstract'], fg='cyan')
-            click.echo()
+        story_index.append(story)
+        index_num += 1
+        click.secho('%r - ' % index_num, bold=True, nl=False)
+        click.secho('%s ' % story['title'], fg='blue', bold=True, nl=False)
+        click.secho('-- %s -- ' % story['source'], fg='magenta', bold=True, nl=False)
+        click.secho('%s' % story['section'], fg='red')
+        click.secho('Story abstract: %s' % story['abstract'], fg='cyan')
+        click.echo()
     
     if index_num > 0:
         click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
@@ -38,5 +37,6 @@ def default_display():
             pass
     else:
         click.secho("No recent headlines to display", fg='blue', bold=True, nl=False)
+        click.echo()
 
 default_display()
