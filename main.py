@@ -25,14 +25,19 @@ def default_display():
         click.echo()
     
     if index_num > 0:
-        click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
-        selection = raw_input()
-        if selection.isdigit():
-            selection = int(selection)
-            story = story_index[selection-1]
-            click.launch(story['url'])
-        else:
-            pass
+        exit == False
+        while exit != True:
+            click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
+            selection = raw_input()
+            if selection.isdigit():
+                selection = int(selection)
+                story = story_index[selection-1]
+                click.launch(story['url'])
+            elif selection == '':
+                return exit == True
+            else:
+                click.secho("Invalid entry", fg='red')
+                pass
     else:
         click.secho("No recent headlines to display", fg='blue', bold=True, nl=False)
         click.echo()
