@@ -1,5 +1,10 @@
 from filters import nyt_filter
 
+class GlobalConfig(object):
+
+    def __init__(self):
+        self.prompt_until_exit = True  #If True in verbose the user will be prompted until s/he explicitly choses to exit
+
 class NYTOptions(object):
 
     def __init__(self):

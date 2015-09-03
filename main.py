@@ -1,5 +1,6 @@
 import click
 import newsoutlets
+from config import GlobalConfig
 
 """
 For NYT API documentation see: http://developer.nytimes.com/io-docs and http://developer.nytimes.com/docs/times_newswire_api/
@@ -8,6 +9,8 @@ For additional news APIs see: http://www.programmableweb.com/news/81-news-apis-d
 """
 
 click.clear()
+
+option = GlobalConfig()
 
 news = newsoutlets.nyt_feed()
 
@@ -33,11 +36,20 @@ def default_display():
                 selection = int(selection)
                 story = story_index[selection-1]
                 click.launch(story['url'])
+                if option.prompt_until_exit == True:
+                    pass
+                else:
+                    return exit == True
+
             elif selection == '':
                 return exit == True
             else:
                 click.secho("Invalid entry", fg='red')
-                pass
+                if option.prompt_until_exit == True:
+                    pass
+                else:
+                    return exit == True
+                
     else:
         click.secho("No recent headlines to display", fg='blue', bold=True, nl=False)
         click.echo()
