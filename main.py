@@ -39,7 +39,7 @@ def default_display(list_of_stories):
             selection = raw_input()
             if selection.isdigit():
                 selection = int(selection)
-                story = story_list[selection-1]
+                story = mixed_story_list[selection-1]
                 click.launch(story.url)
                 if option.prompt_until_exit == True:
                     pass
