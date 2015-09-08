@@ -28,10 +28,10 @@ def default_display(list_of_stories):
     for story in list_of_stories:
         index_num += 1
         click.secho('%r - ' % index_num, bold=True, nl=False)
-        click.secho('%s ' % story.title, fg='blue', bold=True, nl=False)
-        click.secho('-- %s -- ' % story.source, fg='magenta', bold=True, nl=False)
-        click.secho('%s' % story.section, fg='red')
-        click.secho('Story abstract: %s' % story.abstract, fg='cyan')
+        click.secho('%s ' % story.title, fg=option.headline_color, bold=True, nl=False)
+        click.secho('-- %s -- ' % story.source, fg=option.source_color, bold=True, nl=False)
+        click.secho('%s' % story.section, fg=option.section_color)
+        click.secho('Story abstract: %s' % story.abstract, fg=option.abstract_color)
         click.echo()
     
     if index_num > 0:
