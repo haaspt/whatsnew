@@ -1,7 +1,9 @@
 nyt_filter = ['Front Page', 'International Home', 'NYT Now', 'National', 'Science', 'Technology',
               "Today's Headlines", 'U.S.', 'Washington', 'World']
 
-"""List of possible values for section filter:
+guardian_filter = ['politics', 'science', 'theguardian', 'theobserver', 'uk-news', 'us-news', 'world']
+
+"""List of possible values for NYT section filter:
 Arts, Automobiles, Autos, Blogs, Books, Booming, Business, Business Day, 
 Corrections, Crosswords & Games, Crosswords/Games, Dining & Wine, Dining and Wine, 
 Editors' Notes, Education, Fashion & Style, Food, Front Page, Giving, Global Home, 
@@ -13,4 +15,8 @@ Public Editor, Real Estate, Science, Sports, Style, Sunday Magazine, Sunday Revi
 T Magazine, T:Style, Technology, The Public Editor, The Upshot, Theater, Times Topics, 
 TimesMachine, Today's Headlines, Topics, Travel, U.S., Universal, UrbanEye, Washington, 
 Week in Review, World, Your Money
+"""
+
+"""Guardian sections:
+'artanddesign', 'australia-news', 'better-business', 'books', 'business', 'cardiff', 'childrens-books-site', 'cities', 'commentisfree', 'community', 'crosswords', 'culture', 'culture-network', 'culture-professionals-network', 'edinburgh', 'education', 'enterprise-network', 'environment', 'extra', 'fashion', 'film', 'football', 'global-development', 'global-development-professionals-network', 'government-computing-network', 'guardian-professional', 'healthcare-network', 'help', 'higher-education-network', 'housing-network', 'info', 'jobsadvice', 'katine', 'law', 'leeds', 'lifeandstyle', 'local', 'local-government-network', 'media', 'media-network', 'membership', 'money', 'music', 'news', 'politics', 'public-leaders-network', 'science', 'search', 'small-business-network', 'social-care-network', 'social-enterprise-network', 'society', 'society-professionals', 'sport', 'stage', 'teacher-network', 'technology', 'theguardian', 'theobserver', 'travel', 'travel/offers', 'tv-and-radio', 'uk-news', 'us-news', 'voluntary-sector-network', 'weather', 'women-in-leadership', 'world'
 """
