@@ -20,8 +20,8 @@ $ python main.py
 
 ## History
 
--Current version: 0.11 (Alpha) – Added support for the Guardian
--Previous versions: 0.1
+- Current version: 0.11 (Alpha) – Added support for the Guardian
+- Previous versions: 0.1
 
 ## License
 
