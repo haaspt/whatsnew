@@ -8,11 +8,13 @@ from config import GlobalConfig
 For additional news APIs see: http://www.programmableweb.com/news/81-news-apis-digg-fanfeedr-and-clearforest/2012/02/01
 """
 
-click.clear()
+click.echo("Loading the news...")
 
 option = GlobalConfig()
 
 story_list = newsoutlets.feeder()
+
+click.clear()
 
 def mixer(full_story_list, sample_number):
     
@@ -36,17 +38,24 @@ def default_display(list_of_stories):
         exit == False
         while exit != True:
             click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
-            selection = raw_input()
-            if selection.isdigit():
-                selection = int(selection)
-                story = mixed_story_list[selection-1]
-                click.launch(story.url)
-                if option.prompt_until_exit == True:
-                    pass
+            raw_selection = raw_input()
+            if raw_selection.isdigit():
+                selection = int(raw_selection) - 1
+                if selection <= index_num - 1:
+                    story = mixed_story_list[selection]
+                    click.launch(story.url)
+                    if option.prompt_until_exit == True:
+                        pass
+                    else:
+                        return exit == True
                 else:
-                    return exit == True
+                    click.secho("Invalid entry", fg='red')
+                    if option.prompt_until_exit == True:
+                        pass
+                    else:
+                        return exit == True
 
-            elif selection == '':
+            elif raw_selection == '':
                 return exit == True
 
             else:
@@ -56,9 +65,9 @@ def default_display(list_of_stories):
                 else:
                     return exit == True
                 
-    else:
-        click.secho("No recent headlines to display", fg='blue', bold=True, nl=False)
-        click.echo()
+        else:
+            click.secho("No recent headlines to display", fg='blue', bold=True, nl=False)
+            click.echo()
 
 mixed_story_list = mixer(story_list, option.article_limit)
 default_display(mixed_story_list)
