@@ -1,4 +1,5 @@
 import feedparser
+from config import NewsFeedConfig
 
 class NewsFeed(object):
 
@@ -12,7 +13,7 @@ class NewsFeed(object):
         self.feed = feedparser.parse(self.url)
 
     def __str__(self):
-        return "Feed name: %s, Section: %s" % (self.name, self.section)
+        return "Feed name: %s, Section: %s" % (self.outlet, self.section)
 
 class Story(object):
     """Data structure to organize the elements of each news story.                                                                                                      
@@ -27,7 +28,7 @@ class Story(object):
 
 # New York Times Feeds (http://www.nytimes.com/services/xml/rss/index.html) {
 
-nyt_home = NewsFeed('New York Times', 'Front', 'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml', 'English')
+nyt_home = NewsFeed('New York Times', 'Front Page', 'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml', 'English')
 
 nyt_international = NewsFeed('New York Times', 'International', 'http://www.nytimes.com/services/xml/rss/nyt/InternationalHome.xml', 'English')
 
@@ -59,7 +60,7 @@ guardian_politics = NewsFeed('Guardian', 'Politics', 'http://www.theguardian.com
 
 # }
 
-feed_list = [nyt_home, wapo_politics, guardian_world]
+feed_list = [nyt_home, nyt_world, nyt_international, wapo_politics, wapo_us, guardian_world, guardian_front]
 
 def feeder():
 
@@ -67,7 +68,7 @@ def feeder():
     for news_feed in feed_list:
         news_feed.getFeed()
 
-        for story in news_feed.feed.entries:
+        for story in news_feed.feed.entries[0:NewsFeedConfig().limit]:
             story = Story(story.title, story.link, news_feed.section, news_feed.outlet, story.summary.split("<")[0])
             story_list.append(story)
 

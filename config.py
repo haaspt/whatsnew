@@ -12,21 +12,11 @@ class GlobalConfig(object):
         self.abstract_color = 'yellow'
         self.prompt_color = 'green'
 
-class NYTOptions(object):
-    """For NYT API documentation see: http://developer.nytimes.com/io-docs and http://developer.nytimes.com/docs/times_newswire_api/"""
-
-
-    def __init__(self):
-        self.filter = nyt_filter  # Select preferred sections in filters.py
-        self.limit = 20  # Number of articles to be returned by query
-        self.apikey = 'cb6b696a018707793e9436bda629bde3:4:66817738'
-
-
-class GuardianOptions(object):
-    """For the Guardian API documentation see: http://open-platform.theguardian.com/documentation/"""
-
+class NewsFeedConfig(object):
+    """Configure options for the newsfeeds"""
 
     def __init__(self):
-        self.filter = guardian_filter
-        self.limit = 20
-        self.apikey = 'qtz5kdh2ajykqydk75r79nje'
+        self.limit = 20  # Number of articles to be returned by query. Most feeds are limited to 20, some return more.
+
+
+
