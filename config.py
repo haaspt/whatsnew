@@ -1,6 +1,3 @@
-from filters import nyt_filter, guardian_filter
-
-
 class GlobalConfig(object):
 
     def __init__(self):
