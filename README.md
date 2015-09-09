@@ -13,16 +13,19 @@ $ python main.py
 ```
 ## To do List
 
-- [x] Add more news outlets: ~~the Guardian~~
+- [x] Add more news outlets: ~~the Guardian~~, ~~Washington Post~~
+- [ ] Fix Guardian abstract parsing error
+- [ ] Fix HTML encoding errors
 - [ ] Add command line argument support
 - [ ] Add setup.py
-- [x] Add ~~newsoutlets.py~~, ~~filters.py~~, and ~~config.py~~
+- [x] Add modules
 
 ## History
 
-- Current version: 0.11 (Alpha) – Added support for the Guardian
-- Previous versions: 0.1
-
+- Current version: 0.12 (Alpha) – Major internal overhaul, Whatsnew now runs on RSS feeds, supports Washington Post
+- Previous versions:
+- 0.11 – Added support for the Guardian
+- 0.1 – Initial release
 ## License
 
 Copyright (c) 2015 haaspt
