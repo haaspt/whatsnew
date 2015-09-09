@@ -6,10 +6,11 @@ class GlobalConfig(object):
     def __init__(self):
         self.prompt_until_exit = True  # If True in verbose the user will be prompted until s/he chooses to exit
         self.article_limit = 10 # By default only 10 stories will be displayed, future version will allow this to be set by CLI argument
-        self.headline_color = 'blue'
+        self.headline_color = 'cyan'
         self.source_color = 'magenta'
         self.section_color = 'red'
-        self.abstract_color = 'cyan'
+        self.abstract_color = 'yellow'
+        self.prompt_color = 'green'
 
 class NYTOptions(object):
     """For NYT API documentation see: http://developer.nytimes.com/io-docs and http://developer.nytimes.com/docs/times_newswire_api/"""

@@ -3,7 +3,6 @@ import newsoutlets
 import random
 from config import GlobalConfig
 
-
 """
 For additional news APIs see: http://www.programmableweb.com/news/81-news-apis-digg-fanfeedr-and-clearforest/2012/02/01
 """
@@ -37,7 +36,7 @@ def default_display(list_of_stories):
     if index_num > 0:
         exit == False
         while exit != True:
-            click.secho("Select an index number to go to story, or [Enter] to exit: ", fg='blue', bold=True, nl=False)
+            click.secho("Select an index number to go to story, or [Enter] to exit: ", fg=option.prompt_color, bold=True, nl=False)
             raw_selection = raw_input()
             if raw_selection.isdigit():
                 selection = int(raw_selection) - 1
@@ -66,7 +65,7 @@ def default_display(list_of_stories):
                     return exit == True
                 
         else:
-            click.secho("No recent headlines to display", fg='blue', bold=True, nl=False)
+            click.secho("No recent headlines to display", fg=option.prompt_color, bold=True, nl=False)
             click.echo()
 
 mixed_story_list = mixer(story_list, option.article_limit)
