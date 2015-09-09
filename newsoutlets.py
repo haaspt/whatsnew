@@ -28,7 +28,7 @@ def guardian_feed():
     
     config = GuardianOptions()
     guardian_filter = '%7C'.join(config.filter) # Items are separated by vertical pipes, which must be replaced by '%7C' escape characters
-    request_string = 'http://content.guardianapis.com/search?section=%s&order-by=newest&page=%s&api-key=%s' % (guardian_filter, config.limit, config.apikey)
+    request_string = 'http://content.guardianapis.com/search?section=%s&order-by=newest&show-fields=trailText&page=%s&api-key=%s' % (guardian_filter, config.limit, config.apikey)
     guardian_news = requests.get(request_string).json()
     return guardian_news
 
@@ -46,7 +46,7 @@ def feeder():
         news_objects.append(story)
 
     for story in guardian_news['response']['results']:
-        story = Story(story['webTitle'], story['webUrl'], story['sectionName'], "The Guardian", "No abstract available")
+        story = Story(story['webTitle'], story['webUrl'], story['sectionName'], "The Guardian", story['fields']['trailText'])
         news_objects.append(story)
 
     return news_objects
