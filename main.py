@@ -1,5 +1,5 @@
 import click
-import newsoutlets
+import newsfeeds
 import random
 from config import GlobalConfig
 
@@ -11,7 +11,7 @@ click.echo("Loading the news...")
 
 option = GlobalConfig()
 
-story_list = newsoutlets.feeder()
+story_list = newsfeeds.feeder()
 
 click.clear()
 
