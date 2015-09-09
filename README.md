@@ -14,7 +14,7 @@ $ python main.py
 ## To do List
 
 - [x] Add more news outlets: ~~the Guardian~~, ~~Washington Post~~
-- [ ] Fix Guardian abstract parsing error
+- [x] Fix Guardian abstract parsing error
 - [ ] Fix HTML encoding errors
 - [ ] Add command line argument support
 - [ ] Add setup.py

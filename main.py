@@ -3,9 +3,6 @@ import newsfeeds
 import random
 from config import GlobalConfig
 
-"""
-For additional news APIs see: http://www.programmableweb.com/news/81-news-apis-digg-fanfeedr-and-clearforest/2012/02/01
-"""
 
 click.echo("Loading the news...")
 
@@ -16,13 +13,21 @@ story_list = newsfeeds.feeder()
 click.clear()
 
 def mixer(full_story_list, sample_number):
-    
+    """Selects a random sample of stories from the full list to display to the user.
+    Number of stories is set in config.py
+    Todo: Add argument support for number of stories to display
+    """
+
     mixed_story_list = random.sample(set(full_story_list), sample_number)
     return mixed_story_list
 
 
 def default_display(list_of_stories):
-    
+    """Displays a set of stories in the following format:
+    n - Story Title -- OutletName -- Section 
+    Story abstract: Lorem ipsum dolor sit amet
+    """
+
     index_num = 0
     for story in list_of_stories:
         index_num += 1
