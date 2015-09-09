@@ -26,6 +26,7 @@ $ python main.py
   - Previous versions:
   	- 0.11 – Added support for the Guardian
 	- 0.1 – Initial release
+
 ## License
 
 Copyright (c) 2015 haaspt
