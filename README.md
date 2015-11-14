@@ -17,7 +17,7 @@ $ python main.py
 - [x] Fix Guardian abstract parsing error
 - [ ] Fix HTML encoding errors
 - [ ] Add command line argument support
-- [ ] Add setup.py
+- [x] Add setup.py
 - [x] Add modules
 
 ## History
