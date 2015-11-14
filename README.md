@@ -4,12 +4,16 @@ Whatsnew is a lightweight, convenient tool to get an overview of the day's headl
 
 ## Installation
 
-To do: Write installation guide
+Download the files and then run the following in the directory:
+
+```bash
+$ python setup.py install
+```
 
 ## Usage
 
 ```bash
-$ python main.py
+$ whatsnew
 ```
 ## To do List
 
