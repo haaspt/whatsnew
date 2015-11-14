@@ -65,11 +65,16 @@ def default_display(list_of_stories):
             click.secho("No recent headlines to display", fg=option.prompt_color, bold=True, nl=False)
             click.echo()
 
-if __name__ == "__main__":
+def main():
     click.echo("Loading the news...")
+    global option
     option = GlobalConfig()
     story_list = newsfeeds.feeder()
+    global exit_now
     exit_now = False
     click.clear()
     mixed_story_list = mixer(story_list, option.article_limit)
     default_display(mixed_story_list)
+
+if __name__ == '__main__':
+    main()
