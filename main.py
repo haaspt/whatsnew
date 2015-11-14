@@ -1,8 +1,11 @@
 import click
 import newsfeeds
 import random
+import sys
 from config import GlobalConfig
 
+def terminal_resize():
+    sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=40, cols=150))
 
 def mixer(full_story_list, sample_number):
     """Selects a random sample of stories from the full list to display to the user.
@@ -72,6 +75,7 @@ def main():
     story_list = newsfeeds.feeder()
     global exit_now
     exit_now = False
+    terminal_resize()
     click.clear()
     mixed_story_list = mixer(story_list, option.article_limit)
     default_display(mixed_story_list)
