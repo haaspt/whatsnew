@@ -9,6 +9,8 @@ option = GlobalConfig()
 
 story_list = newsfeeds.feeder()
 
+exit_now = False
+
 click.clear()
 
 def mixer(full_story_list, sample_number):
@@ -38,7 +40,6 @@ def default_display(list_of_stories):
         click.echo()
     
     if index_num > 0:
-        global exit_now
         exit_now == False
         while exit_now != True:
             click.secho("Select an index number to go to story, or [Enter] to exit: ", fg=option.prompt_color, bold=True, nl=False)
