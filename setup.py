@@ -19,7 +19,7 @@ setup(
     long_description=readme,
     entry_points = {
         'console_scripts': [
-            'whatsnew = main'
+            'whatsnew = main:main'
             ],
         },
     classifiers=[
