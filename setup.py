@@ -17,11 +17,6 @@ setup(
     scripts=['main.py', 'newsfeeds.py', 'config.py'],
     install_requires=requirements,
     long_description=readme,
-    entry_points = {
-        'console_scripts': [
-            'whatsnew = main'
-            ],
-        },
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

@@ -3,15 +3,6 @@ import newsfeeds
 import random
 from config import GlobalConfig
 
-click.echo("Loading the news...")
-
-option = GlobalConfig()
-
-story_list = newsfeeds.feeder()
-
-exit_now = False
-
-click.clear()
 
 def mixer(full_story_list, sample_number):
     """Selects a random sample of stories from the full list to display to the user.
@@ -74,5 +65,11 @@ def default_display(list_of_stories):
             click.secho("No recent headlines to display", fg=option.prompt_color, bold=True, nl=False)
             click.echo()
 
-mixed_story_list = mixer(story_list, option.article_limit)
-default_display(mixed_story_list)
+if __name__ == "__main__":
+    click.echo("Loading the news...")
+    option = GlobalConfig()
+    story_list = newsfeeds.feeder()
+    exit_now = False
+    click.clear()
+    mixed_story_list = mixer(story_list, option.article_limit)
+    default_display(mixed_story_list)
