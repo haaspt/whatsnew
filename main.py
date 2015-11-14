@@ -3,7 +3,6 @@ import newsfeeds
 import random
 from config import GlobalConfig
 
-
 click.echo("Loading the news...")
 
 option = GlobalConfig()
@@ -39,8 +38,9 @@ def default_display(list_of_stories):
         click.echo()
     
     if index_num > 0:
-        exit == False
-        while exit != True:
+        global exit_now
+        exit_now == False
+        while exit_now != True:
             click.secho("Select an index number to go to story, or [Enter] to exit: ", fg=option.prompt_color, bold=True, nl=False)
             raw_selection = raw_input()
             if raw_selection.isdigit():
@@ -51,23 +51,23 @@ def default_display(list_of_stories):
                     if option.prompt_until_exit == True:
                         pass
                     else:
-                        return exit == True
+                        return exit_now == True
                 else:
                     click.secho("Invalid entry", fg='red')
                     if option.prompt_until_exit == True:
                         pass
                     else:
-                        return exit == True
+                        return exit_now == True
 
             elif raw_selection == '':
-                return exit == True
+                return exit_now == True
 
             else:
                 click.secho("Invalid entry", fg='red')
                 if option.prompt_until_exit == True:
                     pass
                 else:
-                    return exit == True
+                    return exit_now == True
                 
         else:
             click.secho("No recent headlines to display", fg=option.prompt_color, bold=True, nl=False)
