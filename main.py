@@ -19,7 +19,7 @@ def mixer(full_story_list, sample_number):
 
 def default_display(list_of_stories):
     """Displays a set of stories in the following format:
-    n - Story Title -- OutletName -- Section 
+    n - Story Title -- OutletName -- Section
     Story abstract: Lorem ipsum dolor sit amet
     """
 
@@ -32,7 +32,7 @@ def default_display(list_of_stories):
         click.secho('%s' % story.section, fg=option.section_color)
         click.secho('Story abstract: %s' % story.abstract, fg=option.abstract_color)
         click.echo()
-    
+
     if index_num > 0:
         exit_now == False
         while exit_now != True:
@@ -63,7 +63,7 @@ def default_display(list_of_stories):
                     pass
                 else:
                     return exit_now == True
-                
+
         else:
             click.secho("No recent headlines to display", fg=option.prompt_color, bold=True, nl=False)
             click.echo()
@@ -77,6 +77,7 @@ def main():
     exit_now = False
     terminal_resize()
     click.clear()
+    global mixed_story_list
     mixed_story_list = mixer(story_list, option.article_limit)
     default_display(mixed_story_list)
 
