@@ -5,7 +5,11 @@ import sys
 from config import GlobalConfig
 
 def terminal_resize():
-    sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=40, cols=150))
+    """Resizes the terminal window. Default size is 150x40.
+    Can be manually changed under config.py
+    """
+
+    sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=option.displaySettings.height, cols=option.displaySettings.width))
 
 def mixer(full_story_list, sample_number):
     """Selects a random sample of stories from the full list to display to the user.
@@ -69,9 +73,12 @@ def default_display(list_of_stories):
             click.echo()
 
 def main():
-    click.echo("Loading the news...")
+
     global option
     option = GlobalConfig()
+
+    click.echo("Loading the news...")
+
     story_list = newsfeeds.feeder()
     global exit_now
     exit_now = False

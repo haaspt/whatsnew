@@ -9,11 +9,12 @@ class GlobalConfig(object):
         self.abstract_color = 'yellow'
         self.prompt_color = 'green'
 
+    def displaySettings(self):
+        self.height = 40
+        self.width = 150
+
 class NewsFeedConfig(object):
     """Configure options for the newsfeeds"""
 
     def __init__(self):
         self.limit = 20  # Number of articles to be returned by query. Most feeds are limited to 20, some return more.
-
-
-
