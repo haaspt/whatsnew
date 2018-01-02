@@ -9,10 +9,6 @@ class GlobalConfig(object):
         self.abstract_color = 'yellow'
         self.prompt_color = 'green'
 
-    def displaySettings(self):
-        self.height = 40
-        self.width = 150
-
 class NewsFeedConfig(object):
     """Configure options for the newsfeeds"""
 
