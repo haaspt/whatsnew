@@ -7,7 +7,7 @@ requirements = ['click', 'feedparser', 'beautifulsoup4']
 
 setup(
     name = "whatsnew",
-    version = "0.12",
+    version = "0.13",
     author = "Patrick Tyler Haas",
     author_email = "patrick.tyler.haas@gmail.com",
     description = ("A lightweight, convenient tool to get an overview of the day's headlines right from your command line."),
@@ -27,6 +27,6 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
         ],
     )

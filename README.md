@@ -26,10 +26,11 @@ $ whatsnew
 
 ## History
 
-- Current version: 0.12 (Alpha) – Major internal overhaul, Whatsnew now runs on RSS feeds, supports Washington Post
+- Current version: 0.13 (Alpha) – Updated to Python 3.6
   - Previous versions:
-  	- 0.11 – Added support for the Guardian
-	- 0.1 – Initial release
+    - 0.12 - Major internal overhaul, Whatsnew now runs on RSS feeds, supports Washington Post
+    - 0.11 – Added support for the Guardian
+	  - 0.1 – Initial release
 
 ## License
 
