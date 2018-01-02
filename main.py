@@ -35,7 +35,7 @@ def default_display(list_of_stories):
         exit_now == False
         while exit_now != True:
             click.secho("Select an index number to go to story, or [Enter] to exit: ", fg=option.prompt_color, bold=True, nl=False)
-            raw_selection = raw_input()
+            raw_selection = input()
             if raw_selection.isdigit():
                 selection = int(raw_selection) - 1
                 if selection <= index_num - 1:
