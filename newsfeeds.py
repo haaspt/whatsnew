@@ -1,5 +1,5 @@
 import feedparser
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 from config import NewsFeedConfig
 
 class NewsFeed(object):
@@ -17,7 +17,7 @@ class NewsFeed(object):
         return "Feed name: %s, Section: %s" % (self.outlet, self.section)
 
 class Story(object):
-    """Data structure to organize the elements of each news story.                                                                                                      
+    """Data structure to organize the elements of each news story.
     Used by main.py"""
 
     def __init__(self, title, url, section, source, abstract):
@@ -27,7 +27,7 @@ class Story(object):
         self.source = source
         self.abstract = abstract
 
-        
+
 # New York Times Feeds (http://www.nytimes.com/services/xml/rss/index.html) {
 
 nyt_home = NewsFeed('New York Times', 'Front Page', 'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml', 'English')
@@ -71,17 +71,17 @@ def feeder():
         news_feed.getFeed()
 
         for story in news_feed.feed.entries[0:NewsFeedConfig().limit]:
-            
+
             # This is ugly. I'll fix this {
             if news_feed.outlet == 'New York Times':
-                abstract = BeautifulSoup(story.summary).contents[0]
+                abstract = BeautifulSoup(story.summary, "html5lib").contents[0]
             elif news_feed.outlet == 'Washington Post':
-                abstract = BeautifulSoup(story.summary).contents[0]
+                abstract = BeautifulSoup(story.summary, "html5lib").contents[0]
             elif news_feed.outlet == 'Guardian':
-                try: 
-                    abstract = BeautifulSoup(story.summary).p.contents[0]
+                try:
+                    abstract = BeautifulSoup(story.summary, "html5lib").p.contents[0]
                 except AttributeError:
-                    abstract = BeautifulSoup(story.summary).contents[0]
+                    abstract = BeautifulSoup(story.summary, "html5lib").contents[0]
             else:
                 abstract = 'ERROR: Undefined news outlet'
             # }ugly

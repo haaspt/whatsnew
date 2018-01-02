@@ -3,7 +3,7 @@ from setuptools import setup
 
 readme = open('README.md').read()
 
-requirements = ['click', 'feedparser', 'BeautifulSoup']
+requirements = ['click', 'feedparser', 'beautifulsoup4']
 
 setup(
     name = "whatsnew",
